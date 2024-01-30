@@ -1,0 +1,59 @@
+<%- include('./header.ejs') %>
+<div class="container-fluid" id="contactPage">
+    <div class="container bg">
+        <section class="mb-4">
+            <h2 class="h1-responsive font-weight-bold text-center my-5 pt-5">Contact Us</h2>
+            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a metter of hours to help you.</p>
+            <div class="row">
+                <div class="col-md-9 mb-md-0 mb-5">
+                    <form action="" id="contactform">
+                        <div class="row">
+                           <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="name">Your Name:</label>
+                                <input type="text" name="name" id="" class="form-control" placeholder="Your Name">
+                            </div>
+                           </div>
+                           <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="email">Your Email:</label>
+                                <input type="email" name="email" id="" class="form-control" placeholder="Your Email">
+                            </div>
+                           </div>  
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="md-form mb-0">
+                                <label for="subject">Subject:</label>
+                                <input type="text" name="subject" id="" class="form-control" placeholder="Your Subject">
+                              </div>  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="md-form">
+                                <label for="message">Your Message:</label>
+                                <textarea name="message" id="" rows="3" type="text" class="form-control md-textarea"></textarea><br>
+                                <button class="btn btn-primary btn-lg" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 text-center text-primary">
+                   <ul class="list-unstyled mb-0">
+                    <li><i class="fa-solid fa-location-dot fa-2x"></i><p class="text-dark">Campus: Chitora Road, Gwalior, Madhya Pradesh 474006</p></li>
+    
+                    <li><i class="fa-solid fa-phone fa-2x mt-4"></i><p class="text-dark">1800-270-5155 | 9343643500</p></li>
+    
+                    <li><i class="fa-solid fa-envelope fa-2x mt-4"></i><p class="text-dark">info@vikrantuniversity.ac.in</p></li>
+                   </ul> 
+                </div>
+    
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<%- include('./footer.ejs') %>

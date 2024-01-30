@@ -1,0 +1,176 @@
+<%- include('./header.ejs') %>
+
+<div class="h-100" id="profile">
+  <div class="bg pc">
+    <section class="w-100 my-4">
+      <h2 class="h1-responsive font-weight-bold text-center my-3 mb-4">
+        Update Profile
+      </h2>
+      <% if(Object.keys(msg).length > 0){ %>
+
+      <div
+        class="alert <%= msg.error ? ' alert-danger' : 'alert-success' %> notifier"
+      >
+        <%= msg.error || msg.success %>
+      </div>
+      <% } %>
+      <script>
+        // JavaScript to hide the notifier after a delay of 2 seconds)
+        var notifier = Array.from(document.getElementsByClassName("notifier"));
+        notifier.forEach((notifier) => {
+          if (notifier) {
+            setTimeout(() => {
+              notifier.remove();
+            }, 2000);
+          }
+        });
+      </script>
+      <div class="imgDiv">
+        <img class="w-100 h-100" src="<%=img.url%>" alt="" />
+      </div>
+      <div class="text-center">
+        <h4><%=n%></h4>
+        <h5><%=e%></h5>
+      </div>
+      <div class="w-100">
+        <button
+          class="btn btn-primary mb-2"
+          data-bs-toggle="modal"
+          data-bs-target="#updateProfile"
+        >
+          Update Profile
+        </button>
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#changePassword"
+        >
+          Change Password
+        </button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Profile update modal -->
+<div
+  class="modal fade"
+  id="updateProfile"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/updateProfile"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              required
+              placeholder="Enter Your Name"
+              value="<%=n%>"
+            />
+          </div>
+          <div class="mb-3">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              required
+              placeholder="john@gmail.com"
+              value="<%=e%>"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="">Image</label>
+            <input type="file" name="image" class="form-control" />
+            <img src="<%=img.url%>" alt="" width="50" class="mt-1" />
+          </div>
+          <button class="btn btn-info" type="submit">Update Profile</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- password update modal -->
+<div
+  class="modal fade"
+  id="changePassword"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/changePassword"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label>Old Password:</label>
+            <input
+              type="passowrd"
+              name="oldPassword"
+              class="form-control"
+              required
+              placeholder="Old Password"
+            />
+          </div>
+          <div class="mb-3">
+            <label>New Password:</label>
+            <input
+              type="password"
+              name="newPassword"
+              class="form-control"
+              required
+              placeholder="New Password"
+            />
+          </div>
+          <div class="mb-3">
+            <label>Confirm Password:</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              class="form-control"
+              required
+              placeholder="Confirm Password"
+            />
+          </div>
+          <button class="btn btn-info" type="submit">Change Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./footer.ejs') %>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITM - Home</title>
+
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
+    ">
+    <link rel="icon" href="/img/logocircle.png">
+    <link rel="stylesheet" href="/css/index.css">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="navb-logo">
+                <img src="/img/LogoL.png" alt="Logo">
+            </div>
+            <div class="navb-items d-none d-xl-flex">
+                <div class="item">
+                    <a href="/dashboard">Home</a>
+                </div>
+
+                <div class="item">
+                    <a href="/about">About</a>
+                </div>
+
+                <div class="item">
+                    <a href="/contact">Contact</a>
+                </div>
+
+                <div class="item">
+                    <h5>
+                        <%= n %>
+                    </h5>
+                </div>
+
+                <div class="item">
+                    <a href="/profile"><img src="<%= img.url %>" alt="" class="profile-img"></a>
+                </div>
+
+                <div class="item-button">
+                    <a href="/logout" type="button">Log Out</a>
+                </div>
+            </div>
+
+            <!-- Button trigger modal -->
+            <div class="mobile-toggler d-lg-none">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="navbModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" id="nav-dialog">
+                    <div class="modal-content" id="nav-dialog-content">
+
+                        <div class="modal-header">
+                            <img src="/img/LogoL.png" alt="Logo">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                                    class="fa-solid fa-xmark"></i></button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-house"></i><a href="/dashboard">Home</a>
+                            </div>
+                            <div class="modal-line">
+                                <i class="fa-solid fa-circle-info"></i><a href="/about">About</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-address-book"></i><a href="/contact">Contact</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-user"></i> <a href="profile">
+                                    <h5 class="text-white">
+                                        <%= n %>
+                                    </h5>
+                                </a>
+                            </div>
+
+
+                            <a href="/" class="navb-button" type="button">Log Out</a>
+                        </div>
+
+                        <div class="mobile-modal-footer">
+
+                            <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a target="_blank" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a target="_blank" href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a target="_blank" href="#"><i class="fa-brands fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>

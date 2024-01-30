@@ -1,0 +1,26 @@
+<%- include('./header.ejs') %>
+    <br />
+    <br />
+    <div class="container">
+        <h1 class="text-center">Course View</h1>
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Course</th>
+            </tr>
+            <tr>
+                <td><%= d._id %></td>
+                <td><%= d.name %></td>
+                <td><%= d.email %></td>
+                <td><%= d.city %></td>
+                <td><%= d.address %></td>
+                <td><%= d.course %></td>
+            </tr>
+        </table>
+    </div>
+
+<%- include('./footer.ejs') %>
